@@ -1,36 +1,69 @@
+@font-face {
+  font-family: "Norse";
+  src: url("Norse-Bold.woff2") format("woff2"),
+    url("Norse-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  --light-text-color: white;
 }
 
 body {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
 }
 
 .left-section {
-  background: green;
-  height: 100%;
-  width: 40%;
-  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("./imgs/background.jpg");
+  background-size: 100% 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .banner {
   display: flex;
   justify-content: center;
-  padding: 3rem 0;
-  background: #000;
-  color: white;
+  align-items: center;
+  padding: 1em 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--light-text-color);
   margin: 12rem 0 0 0;
+}
+
+.banner > .logo {
+  width: 7rem;
+}
+
+.banner > p {
+  font-family: "Norse";
+  font-size: 7rem;
+}
+
+.photo-attribute {
+  color: var(--light-text-color);
+  text-align: center;
+}
+
+.photo-attribute > a {
+  color: var(--light-text-color);
 }
 
 .right-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(190, 190, 190);
-  width: 60%;
+  background: rgb(245, 245, 245);
   flex: 1 1 auto;
 }
 
@@ -48,7 +81,7 @@ button,
 
 form {
   display: grid;
-  background: white;
+  background: var(--light-text-color);
   padding: 3rem 0 3rem 5%;
   grid-template-areas:
     "title title"
