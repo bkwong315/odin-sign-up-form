@@ -11,7 +11,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 700;
+
   --light-text-color: white;
+  --box-shadow-gray: rgb(226, 226, 226);
+  --box-shadow-darker-gray: rgb(201, 201, 201);
 }
 
 body {
@@ -46,7 +51,7 @@ body {
 }
 
 .banner > p {
-  font-family: "Norse";
+  font-family: "Norse", sans-serif;
   font-size: 7rem;
 }
 
@@ -62,7 +67,6 @@ body {
 .right-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: rgb(245, 245, 245);
   flex: 1 1 auto;
 }
@@ -74,32 +78,76 @@ button,
 }
 
 .inspire-text {
-  width: 40rem;
-  font-size: 2rem;
-  margin-bottom: 3rem;
+  width: 55ch;
+  font-size: 1.5rem;
+  margin: 8rem 0 5rem 5%;
 }
 
 form {
   display: grid;
   background: var(--light-text-color);
-  padding: 3rem 0 3rem 5%;
-  grid-template-areas:
-    "title title"
-    "first last"
-    "email phone"
-    "password confirm";
+  padding: 0 0 0 5%;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 0.4fr 0.6fr;
+  box-shadow: 10px 0px 0px var(--box-shadow-darker-gray);
 }
 
 form > h2 {
-  grid-area: title;
+  grid-column: 1 / 3;
+  padding: 1em 0;
+}
+
+.input-container {
+  margin-bottom: 1.25rem;
+}
+
+.input-container > input {
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.5em;
+  width: clamp(50%, 80%, 30ch);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.input-container > input:invalid,
+.invalid {
+  border-color: red;
+}
+
+.input-container > input:focus-visible {
+  outline: none;
+  border: 1px solid blue;
+  box-shadow: 3px 3px 4px var(--box-shadow-darker-gray);
+}
+
+.input-container > label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: rgb(92, 92, 92);
 }
 
 button[type="submit"] {
+  appearance: none;
   margin-top: 3rem;
   width: fit-content;
-  padding: 0.5rem;
+  padding: 1em 3em;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #596d48;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 4px 2px var(--box-shadow-gray);
 }
 
 .login-text {
   margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.login-text > a {
+  text-decoration: none;
+  color: #596d48;
 }
