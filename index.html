@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Sign Up Page</title>
   </head>
   <body>
@@ -36,42 +37,28 @@
         <h2>Let's do this!</h2>
         <div class="input-container">
           <label for="first-name">FIRST NAME</label>
-          <input
-            type="text"
-            name="firstName"
-            id="first-name"
-            placeholder="Thor"
-          />
+          <input type="text" name="firstName" id="first-name" required />
         </div>
         <div class="input-container">
           <label for="last-name">LAST NAME</label>
-          <input
-            type="text"
-            name="lastName"
-            id="last-name"
-            placeholder="Odinson"
-          />
+          <input type="text" name="lastName" id="last-name" required />
         </div>
         <div class="input-container">
           <label for="e-mail">EMAIL</label>
-          <input
-            type="email"
-            name="eMail"
-            id="e-mail"
-            placeholder="abc@email.com"
-          />
+          <input type="email" name="eMail" id="e-mail" required />
         </div>
         <div class="input-container">
           <label for="phone-number">PHONE NUMBER</label>
-          <input type="tel" name="phoneNumber" id="phone-number" />
+          <input type="tel" name="phoneNumber" id="phone-number" required />
         </div>
         <div class="input-container">
           <label for="user-password">PASSWORD</label>
-          <input type="password" name="password" id="user-password" />
+          <input type="password" name="password" id="user-password" required />
+          <span>*Passwords do not match</span>
         </div>
         <div class="input-container">
           <label for="confirm-password">CONFIRM PASSWORD</label>
-          <input type="password" id="confirm-password" />
+          <input type="password" id="confirm-password" required />
         </div>
       </form>
       <button type="submit" form="sign-up-form">Create Account</button>

@@ -17,6 +17,7 @@
   --light-text-color: white;
   --box-shadow-gray: rgb(226, 226, 226);
   --box-shadow-darker-gray: rgb(201, 201, 201);
+  --font-color-red: rgb(206, 48, 48);
 }
 
 body {
@@ -112,7 +113,7 @@ form > h2 {
 }
 
 .input-container > input:invalid,
-.invalid {
+input.invalid {
   border-color: red;
 }
 
@@ -127,6 +128,12 @@ form > h2 {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: rgb(92, 92, 92);
+}
+
+label[for="user-password"] ~ span {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--font-color-red);
 }
 
 button[type="submit"] {
